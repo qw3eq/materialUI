@@ -17,11 +17,16 @@ export default createMuiTheme({
     }
   },
   typography: {
-    h3: {
-      fontWeight: 300
+    tab: {
+      fontFamily: 'Railway',
+      textTransform: 'none',
+      fontWeight: 700,
+      fontSize: '1rem',
     },
-    h4: {
-      fontWeight: 300
+    estimate: {
+      fontSize: '1rem',
+      textTransform: 'none',
+      color: 'white'
     }
   }
 })
