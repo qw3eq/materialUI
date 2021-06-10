@@ -18,7 +18,7 @@ export default createMuiTheme({
   },
   typography: {
     tab: {
-      fontFamily: 'Railway',
+      fontFamily: 'Raleway',
       textTransform: 'none',
       fontWeight: 700,
       fontSize: '1rem',
