@@ -1,9 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { Grid } from '@material-ui/core';
+import { Grid, Hidden } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 import footerAdornment from '../../assets/Footer Adornment.svg'
+import facebook from '../../assets/facebook.svg'
+import twitter from '../../assets/twitter.svg'
+import instagram from '../../assets/instagram.svg'
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -34,6 +37,22 @@ const useStyles = makeStyles(theme => ({
   },
   gridItem: {
     margin: "3em"
+  },
+  icon: {
+    height: "4em",
+    width: "4em",
+    [theme.breakpoints.down("xs")]: {
+      height: "2.5em",
+      width: "2.5em"
+    }
+  },
+  socialContainer: {
+    position: "absolute",
+    marginTop: "-6em",
+    right: "1.5em",
+    [theme.breakpoints.down("xs")]: {
+      right: "0.6em",
+    }
   }
 }))
 
@@ -43,6 +62,7 @@ export default function Footer(props) {
 
   return (
     <footer className={classes.footer}>
+      <Hidden mdDown>
       <Grid container justify="center" className={classes.mainContainer}>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
@@ -104,7 +124,21 @@ export default function Footer(props) {
           </Grid>
         </Grid>
       </Grid>
+      </Hidden>
+
       <img className={classes.adornment} src={footerAdornment} alt="footer adornment" />
+
+      <Grid container spacing={2} justify="flex-end" className={classes.socialContainer}>
+        <Grid item component={"a"} href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+          <img src={facebook} alt="facebook logo" className={classes.icon} />
+        </Grid>
+        <Grid item component={"a"} href="https://twitter.com" rel="noopener noreferrer" target="_blank">
+          <img src={twitter} alt="twitter logo" className={classes.icon} />
+        </Grid>
+        <Grid item component={"a"} href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+          <img src={instagram} alt="instagram logo" className={classes.icon} />
+        </Grid>
+      </Grid>
     </footer>
   )
 }
